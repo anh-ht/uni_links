@@ -110,6 +110,10 @@ public class UniLinksPlugin
             result.success(initialLink);
         } else if (call.method.equals("getLatestLink")) {
             result.success(latestLink);
+        } else if (call.method.equals("setLatestLink")) {
+            final String value = call.argument("value");
+            this.latestLink = value;
+            result.success(null);
         } else {
             result.notImplemented();
         }
